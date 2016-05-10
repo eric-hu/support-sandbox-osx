@@ -1,0 +1,9 @@
+dependencies:
+  post:
+    - export FOO=bar
+
+test:
+  override:
+    - echo $FOO
+    - exit 0
+
