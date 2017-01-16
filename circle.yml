@@ -11,8 +11,8 @@
 machine:
   xcode:
     version: 7.3
-  environment:
-    XCODE_SCHEME: 7.3
+  override:
+    - exit 0
 
 test:
   override:
