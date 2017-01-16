@@ -11,6 +11,9 @@
 machine:
   xcode:
     version: 7.3
+  environment:
+    XCODE_SCHEME: foo
+    XCODE_WORKSPACE: foo
   override:
     - exit 0
 
