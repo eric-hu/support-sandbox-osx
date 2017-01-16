@@ -1,12 +1,12 @@
-dependencies:
-  override:
-    - ruby --version
-    - brew install chruby
-    - echo "source /usr/local/opt/chruby/share/chruby/chruby.sh" >> ~/.bashrc
-    - echo "RUBIES+=(/usr/local/Cellar/ruby20/2.0.0-p648/)" >> ~/.bashrc
-  pre: 
-    - chruby system && gem install bundler
-    - chruby system && bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
+#dependencies:
+  #override:
+    #- ruby --version
+    #- brew install chruby
+    #- echo "source /usr/local/opt/chruby/share/chruby/chruby.sh" >> ~/.bashrc
+    #- echo "RUBIES+=(/usr/local/Cellar/ruby20/2.0.0-p648/)" >> ~/.bashrc
+  #pre: 
+    #- chruby system && gem install bundler
+    #- chruby system && bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
 
 machine:
   xcode:
@@ -14,4 +14,5 @@ machine:
 
 test:
   override:
+    - git status
     - exit 0
