@@ -1,4 +1,11 @@
 dependencies:
+  pre:
+    - ls ~/foo
+  cache_directories:
+    - "~/foo"
+  override:
+    - mkdir ~/foo
+    - echo "asdf" > ~/foo/asdf
   post:
     - export FOO=bar
 
