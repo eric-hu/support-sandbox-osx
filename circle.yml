@@ -1,6 +1,8 @@
 dependencies:
+  cache_directories:
+    - "~/foo"
   pre:
-    - ls ~/foo
+    - ls ~/foo || echo "folder doesn't exist"
   cache_directories:
     - "~/foo"
   override:
