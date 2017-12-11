@@ -1,19 +1,9 @@
-dependencies:
-  cache_directories:
-    - "~/foo"
-  pre:
-    - ls ~/foo || echo "folder doesn't exist"
-  cache_directories:
-    - "~/foo"
-  override:
-    - mkdir ~/foo
-    - echo "asdf" > ~/foo/asdf
-  post:
-    - export FOO=bar
-
-test:
-  override:
-    - echo $FOO
-    - exit 0
-
-
+version: 2
+jobs:
+  build:
+    macos:
+      xcode: "8.3.3"
+    #working_directory: /Users/distiller/project
+    shell: /bin/bash --login -o pipefail
+    steps:
+      - checkout
